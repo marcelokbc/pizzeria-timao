@@ -1,9 +1,22 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# create menus
+pizza = Menu.create(name: 'Pizza')
+drinks = Menu.create(name: 'Drinks')
+
+# create menu items
+MenuItem.create([
+  { name: 'Marguerita', description: 'Mussarela, Tomate, Manjericão', price: 8.99, menu: pizza },
+  { name: 'Pepperoni', description: 'Mussarela, Pepperoni', price: 9.99, menu: pizza },
+  { name: 'Coca-Cola', description: 'Coca-Cola', price: 1.99, menu: drinks },
+  { name: 'Guaraná', description: 'Guaraná', price: 1.99, menu: drinks },
+  { name: 'Fanta', description: 'Fanta', price: 1.99, menu: drinks },
+  { name: 'Água', description: 'Água', price: 0.99, menu: drinks }
+])
+
+# create users
+waiter = User.create!(email: 'waiter@example.com', password: 'password', role: 'waiter')
+manager = User.create!(email: 'manager@example.com', password: 'password', role: 'manager')
+admin = User.create!(email: 'admin@example.com', password: 'password', role: 'admin')
+
+
+# create tables
+(1..10).each { |i| Table.create(number: i, status: 'free', user_id: waiter.id) }
