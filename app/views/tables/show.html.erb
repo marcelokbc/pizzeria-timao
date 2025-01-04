@@ -1,0 +1,10 @@
+<h1 class="text-2xl font-bold mb-4">Mesa <%= @table.number %></h1>
+
+<h2 class="text-xl font-semibold">Menus</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <% @menus.each do |menu| %>
+    <div class="p-4 bg-blue-100 border border-blue-300 rounded shadow-md text-center hover:bg-blue-200">
+      <h3 class="text-lg font-semibold"><%= menu.name %></h3>
+    </div>
+  <% end %>
+</div>

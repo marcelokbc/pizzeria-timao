@@ -19,11 +19,9 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <div id="flash">
-        <%= render 'shared/flashes' %>
-      </div>
-      <%= yield %>
-    </main>
+    <div id="flash">
+      <%= render 'shared/flashes' %>
+    </div>
+      <%= yield %> <!-- This is where the content of the view will be rendered -->
   </body>
 </html>
