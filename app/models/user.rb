@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :orders
   has_many :tables
 
-  enum role: { admin: 0, manager: 1, waiter: 2 }
+  enum :role, { admin: 0, manager: 1, waiter: 2 }
 end
