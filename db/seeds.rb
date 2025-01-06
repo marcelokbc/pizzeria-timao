@@ -13,9 +13,9 @@ MenuItem.create([
 ])
 
 # create users
-waiter = User.create!(email: 'waiter@example.com', password: 'password', role: 'waiter')
-manager = User.create!(email: 'manager@example.com', password: 'password', role: 'manager')
-admin = User.create!(email: 'admin@example.com', password: 'password', role: 'admin')
+waiter = User.create!(email: 'waiter@example.com', password: 'password', role: 2)
+manager = User.create!(email: 'manager@example.com', password: 'password', role: 1)
+admin = User.create!(email: 'admin@example.com', password: 'password', role: 0)
 
 
 # create tables

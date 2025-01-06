@@ -10,6 +10,7 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "jbuilder"
 gem "devise", "~> 4.9"
+gem "simple_form"
 # gem "redis", ">= 4.0.1"
 
 # gem "kredis"
