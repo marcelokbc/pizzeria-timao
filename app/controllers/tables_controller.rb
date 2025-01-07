@@ -7,6 +7,8 @@ class TablesController < ApplicationController
 
   def show
     @menus = Menu.all
+    @selected_menu = params[:menu_id].present? ? Menu.find(params[:menu_id]) : @menus.first
+    @menu_items = @selected_menu.menu_items if @selected_menu.present?
   end
 
   def update; end
