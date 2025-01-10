@@ -1,5 +1,5 @@
 class Table < ApplicationRecord
-  has_many :orders
+  has_many :orders, dependent: :destroy
   belongs_to :user, optional: true
   
   enum :status, { free: 0, occupied: 1, reserved: 2 }

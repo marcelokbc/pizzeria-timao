@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   belongs_to :table
   has_many :order_items, dependent: :destroy
 
-  before_salve :calculate_total_price
+  before_save :calculate_total_price
 
   private
 

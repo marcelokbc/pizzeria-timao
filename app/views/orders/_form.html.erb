@@ -1,0 +1,22 @@
+<h1 class="text-2xl font-bold">New Order for Table <%= @table.number %></h1>
+
+<%= form_with model: [@table, @order], local: true do |form| %>
+  <h2 class="text-xl font-semibold">Add Items</h2>
+  
+  <div id="order-items">
+    <%= form.fields_for :order_items do |item_form| %>
+      <div class="mb-4">
+        <%= item_form.label :menu_item_id, "Menu Item" %>
+        <%= item_form.collection_select :menu_item_id, MenuItem.all, :id, :name, prompt: "Select an item" %>
+
+        <%= item_form.label :quantity, "Quantity" %>
+        <%= item_form.number_field :quantity, min: 1, class: "ml-2" %>
+
+        <%= item_form.label :price, "Price" %>
+        <%= item_form.number_field :price, step: 0.01, class: "ml-2" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= form.submit "Create Order", class: "btn btn-success mt-4" %>
+<% end %>

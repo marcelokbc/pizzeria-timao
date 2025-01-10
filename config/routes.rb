@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :tables, only: [:index, :show, :update]
+  resources :tables do
+    resources :orders, shallow: true
+  end
+  
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
